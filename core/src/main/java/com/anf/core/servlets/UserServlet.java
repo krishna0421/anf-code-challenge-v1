@@ -34,13 +34,36 @@ import java.io.IOException;
 public class UserServlet extends SlingSafeMethodsServlet {
 
     private static final long serialVersionUID = 1L;
+    private static final String NAME = "name";
+    private static final String EMAIL = "email";
+    private static final String AGE = "age";
+    private static final String COUNTRY = "country";
 
     @Reference
     private ContentService contentService;
 
+    /**
+     * Method to validate the user details entered.
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(final SlingHttpServletRequest req,
             final SlingHttpServletResponse resp) throws ServletException, IOException {
-        // Make use of ContentService to write the business logic
+
+     // ***Begin Code - Gopi Kotapati *** 
+
+        String name = req.getParameter(NAME);
+        String email = req.getParameter(EMAIL);
+        String age = req.getParameter(AGE);
+        String country = req.getParameter(COUNTRY);
+
+        // Following methods to check the validations and return a message based on validations.
+        String message = contentService.commitUserDetails(name, email, age, country, req);
+        resp.getWriter().write(message);
     }
+
+    // *** END CODE ***
 }
