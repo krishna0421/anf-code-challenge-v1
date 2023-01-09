@@ -1,0 +1,11 @@
+{
+"newsFeed" : {
+  "jcr:primaryType": "nt:unstructured",
+  "jcr:createdBy": "admin",
+  "jcr:lastModifiedBy": "admin",
+  "jcr:created": "Thu Jan 05 2023 11:44:35 GMT+0530",
+  "jcr:lastModified": "Fri Jan 06 2023 16:16:25 GMT+0530",
+  "sling:resourceType": "anf-code-challenge/components/newsFeedComponent",
+  "newsPath": "/var/commerce/products/anf-code-challenge/newsData"
+}
+}
